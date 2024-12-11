@@ -96,7 +96,6 @@ public class IslandSimulation {
             int randomIndex = random.nextInt(herbivores.size());
             Herbivore randomHerbivore = herbivores.get(randomIndex);
             try {
-                // Создаем экземпляр животного через рефлексию
                 Herbivore newHerbivore = randomHerbivore.getClass().newInstance();
                 herbivores.add(newHerbivore);
             } catch (InstantiationException | IllegalAccessException e) {
@@ -126,7 +125,6 @@ public class IslandSimulation {
             int randomIndex = random.nextInt(predators.size());
             Predator randomPredator = predators.get(randomIndex);
             try {
-                // Создаем экземпляр животного через рефлексию
                 Predator newPredator = randomPredator.getClass().newInstance();
                 predators.add(newPredator);
             } catch (InstantiationException | IllegalAccessException e) {

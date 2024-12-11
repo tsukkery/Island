@@ -5,6 +5,7 @@ import lifeform.animal.Animal;
 import lifeform.plant.Plant;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Location {
     private final int row;
@@ -16,8 +17,8 @@ public class Location {
         this.row = row;
         this.column = column;
 
-        animals = new ArrayList<>();
-        plants = new ArrayList<>();
+        animals = Collections.synchronizedList(new ArrayList<>());
+        plants = Collections.synchronizedList(new ArrayList<>());
     }
 
     public void addAnimal(Animal animal) {
